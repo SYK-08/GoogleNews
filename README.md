@@ -29,7 +29,7 @@ googlenews = GoogleNews()
 ```
 print(googlenews.getVersion())
 ```
-- Enable to throw exception
+- Enable to throw an exception
 ```
 googlenews.enableException(True)
 ```
@@ -41,7 +41,7 @@ or
 ```
 googlenews = GoogleNews(lang='en', region='US')
 ```
-- Optional choose period (period and custom day range should not set together)
+- Optional choose period (period and custom day range should not be set together)
 ```
 googlenews = GoogleNews(period='7d')
 ```
@@ -69,16 +69,16 @@ googlenews.get_news('APPLE')
 googlenews.search('APPLE')
 ```
 
-Default return first page result, you don't need to get first page again, otherwise you might get duplicate result. To get other page of search results:
+Default return first-page result, you don't need to get the first page again, otherwise you might get a duplicate result. To get other pages of search results:
 
 ```
 googlenews.get_page(2)
 ```
-- If you only want to get specific page
+- If you only want to get a specific page
 ```
 result = googlenews.page_at(2)
 ```
-- If you want to get the total result number of the search(this is approximate number, not exact number, it is the number showing on the google search page) (Note: this function is not available for `googlenews.search()`)
+- If you want to get the total result number of the search(this is an approximate number, not the exact number, it is the number showing on the Google search page) (Note: this function is not available for `googlenews.search()`)
 ```
 googlenews.total_count()
 ```
@@ -86,7 +86,7 @@ googlenews.total_count()
 ```
 googlenews.results()
 ```
-if `googlenews.results(sort=True)` the tool will try to order the results in cronologically reversed order
+if `googlenews.results(sort=True)` the tool will try to order the results in chronologically reversed order
 
 - Get texts will return the list of news titles
 ```
@@ -96,13 +96,13 @@ googlenews.get_texts()
 ```
 googlenews.get_links()
 ```
-- Clear result list before doing another search with the same object
+- Clear the result list before doing another search with the same object
 ```
 googlenews.clear()
 ```
 ## Issue
-Image is not working in the latest version, it can only return default google loading gif
+The image is not working in the latest version, it can only return the default Google loading gif
 
-The date range is not always working as Google may return the result with random order or out of date range.
+The date range is not always working as Google may return the result in random order or out-of-date range.
 
-Google may recognize the program as automated robots and block the IP, using cloud server and fetching data with high frequency will get higher chance to be blocked. 
+Google may recognize the program as an automated robot and block the IP, using a cloud server and fetching data with high frequency will get a higher chance of being blocked. 
